@@ -14,11 +14,11 @@
   url = "/getting-started/"
 
 [[docs]]
-  name = "主题"
+  name = "Hugo 模块"
   weight = 15
-  identifier = "themes"
+  identifier = "modules"
   post = "break"
-  url = "/themes/"
+  url = "/hugo-modules/"
 
 # Core languages.zh.menus
 
@@ -46,6 +46,12 @@
   weight = 35
   identifier = "variables"
   url = "/variables/"
+
+[[docs]]
+  name = "Hugo Pipes"
+  weight = 36
+  identifier = "pipes"
+  url = "/hugo-pipes/"
 
 [[docs]]
   name = "CLI"

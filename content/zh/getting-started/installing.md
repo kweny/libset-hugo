@@ -551,16 +551,16 @@ OpenBSD 通过 `pkg_add` 方式提供了一个 Hugo 软件包：
 [brew]: https://brew.sh/
 [macports]: https://www.macports.org/
 [Chocolatey]: https://chocolatey.org/
-[content]: /content-management/
+[content]: {{< relref "/content-management" >}}
 [@dhersam]: https://github.com/dhersam
 [forum]: https://discourse.gohugo.io
 [mage]: https://github.com/magefile/mage
 [dep]: https://github.com/golang/dep
-[highlight shortcode]: /content-management/shortcodes/#highlight
+[highlight shortcode]: {{< relref "/content-management/shortcodes#highlight" >}}
 [installgit]: https://git-scm.com/
 [installgo]: https://golang.org/dl/
 [linuxbrew]: https://docs.brew.sh/Homebrew-on-Linux
-[quickstart]: /getting-started/quick-start/
+[quickstart]: {{< relref "/getting-started/quick-start" >}}
 [redhatforum]: https://discourse.gohugo.io/t/solved-fedora-copr-repository-out-of-service/2491
 [releases]: https://github.com/gohugoio/hugo/releases
 [Scoop]: https://scoop.sh/

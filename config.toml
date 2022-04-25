@@ -1,4 +1,4 @@
-baseURL = "https://libset.com/hugo"
+baseURL = "https://libset.com/hugo/"
 paginate =  100
 defaultContentLanguage = "zh"
 enableEmoji = true
@@ -6,7 +6,7 @@ timeZone = "Asia/Shanghai"
 # Set the unicode character used for the "return" link in page footnotes.
 footnotereturnlinkcontents = "↩"
 languageCode = "zh-cn"
-title = "Hugo"
+title = "Hugo 中文文档"
 
  ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 

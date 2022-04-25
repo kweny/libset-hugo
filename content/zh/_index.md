@@ -1,5 +1,5 @@
 ---
-title: "The world’s fastest framework for building websites"
+title: "世界上最快的网站构建框架"
 date: 2017-03-02T12:00:00-05:00
 features:
   - heading: Blistering Speed
@@ -46,4 +46,4 @@ sections:
     copy: "Hugo's Go-based templating provides just the right amount of logic to build anything from the simple to complex."
 ---
 
-Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
+Hugo 是最流行的开源静态站点生成器之一。凭借其惊人的速度和灵活性，让构建网站再次变得有趣。

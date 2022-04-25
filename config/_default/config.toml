@@ -1,11 +1,11 @@
-baseURL = "https://gohugo.io/"
+baseURL = "https://libset.com/hugo/"
 paginate = 100
 defaultContentLanguage = "zh"
 enableEmoji = true
 # Set the unicode character used for the "return" link in page footnotes.
 footnotereturnlinkcontents = "↩"
 languageCode = "zh-cn"
-title = "Hugo"
+title = "Hugo 中文文档"
 
 googleAnalytics = "UA-7131036-4"
 

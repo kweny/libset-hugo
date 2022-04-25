@@ -137,14 +137,14 @@ Hugo 会到这个目录中查找原型文件（内容模板）。{{% module-moun
 
 **默认值：** "assets"
 
-Hugo 到这个目录查找供 [Hugo Pipes](/hugo-pipes/) 使用的资产文件。{{% module-mounts-note %}}
+Hugo 到这个目录查找供 [Hugo Pipes]({{< relref "/hugo-pipes" >}}) 使用的资产文件。{{% module-mounts-note %}}
 
 ### baseURL
 
 站点根主机名（和路径），例如 https://bep.is/。
 
 ### blackfriday
-参阅 [配置 Blackfriday](/getting-started/configuration-markup#blackfriday)
+参阅 [配置 Blackfriday]({{< relref "/configuration-markup#blackfriday" >}})
 
 ### build
 
@@ -175,7 +175,7 @@ Hugo 到这个目录查找供 [Hugo Pipes](/hugo-pipes/) 使用的资产文件�
 
 {{< new-in "0.86.0" >}}
 
-将默认配置值（前言设定 front matter）传递到内容树中的页面。站点配置中的选项和前言设定中的选项相同，请参阅 [Front Matter Cascade](/content-management/front-matter#front-matter-cascade)。
+将默认配置值（前言设定 front matter）传递到内容树中的页面。站点配置中的选项和前言设定中的选项相同，请参阅 [Front Matter Cascade]({{< relref "/content-management/front-matter#front-matter-cascade" >}})。
 
 ### canonifyURLs
 
@@ -259,7 +259,7 @@ Hugo 从中读取数据文件的目录。{{% module-mounts-note %}}
 
 **默认值：** false
 
-启用行内短代码（shortcode）支持。请参阅[行内短代码](/templates/shortcode-templates/#inline-shortcodes)。
+启用行内短代码（shortcode）支持。请参阅[行内短代码]({{< relref "/templates/shortcode-templates#inline-shortcodes" >}})。
 
 ### enableMissingTranslationPlaceholders
 
@@ -291,7 +291,7 @@ Google Analytics 的跟踪 ID。
 
 ### imaging
 
-参阅[图像处理配置](/content-management/image-processing/#imaging-configuration)。
+参阅[图像处理配置]({{< relref "/content-management/image-processing#imaging-configuration" >}})。
 
 ### languageCode
 
@@ -301,21 +301,21 @@ Google Analytics 的跟踪 ID。
 
 ### languages
 
-参阅[配置语言](/content-management/multilingual/#configure-languages)。
+参阅[配置语言]({{< relref "/content-management/multilingual#configure-languages" >}})。
 
 ### disableLanguages
 
-参阅[禁用语言](/content-management/multilingual/#disable-a-language)。
+参阅[禁用语言]({{< relref "/content-management/multilingual#disable-a-language" >}})。
 
 ### markup
-参阅[配置标记](/getting-started/configuration-markup)。{{< new-in "0.60.0" >}}
+参阅[配置标记]({{< relref "/getting-started/configuration-markup" >}})。{{< new-in "0.60.0" >}}
 
 ### mediaTypes
-参阅[配置媒体类型](/templates/output-formats/#media-types)。
+参阅[配置媒体类型]({{< relref "/templates/output-formats#media-types" >}})。
 
 ### menus
 
-参阅[向菜单添加非内容条目](/content-management/menus/#add-non-content-entries-to-a-menu)。
+参阅[向菜单添加非内容条目]({{< relref "/content-management/menus#add-non-content-entries-to-a-menu" >}})。
 
 ### minify
 
@@ -323,7 +323,7 @@ Google Analytics 的跟踪 ID。
 
 ### module
 
-模块配置参阅[模块配置](/hugo-modules/configuration/)。{{< new-in "0.56.0" >}}
+模块配置参阅[模块配置]({{< relref "/hugo-modules/configuration" >}})。{{< new-in "0.56.0" >}}
 
 ### newContentEditor
 
@@ -351,7 +351,7 @@ Google Analytics 的跟踪 ID。
 
 **默认值：** 10
 
-[分页](/templates/pagination/)中每页默认的元素数量。
+[分页]({{< relref "/templates/pagination" >}})中每页默认的元素数量。
 
 ### paginatePath
 
@@ -361,7 +361,7 @@ Google Analytics 的跟踪 ID。
 
 ### permalinks
 
-参阅[内容管理](/content-management/urls/#permalinks)。
+参阅[内容管理]({{< relref "/content-management/urls#permalinks" >}})。
 
 ### pluralizeListTitles
 
@@ -377,7 +377,7 @@ Hugo 将最终生成的站点静态文件（HTML 文件等）写入到该目录�
 
 ### related
 
-参阅[关联内容](/content-management/related/#configure-related-content)。{{< new-in "0.27" >}}
+参阅[关联内容]({{< relref "/content-management/related#configure-related-content" >}})。{{< new-in "0.27" >}}
 
 ### relativeURLs 
 
@@ -413,29 +413,29 @@ RSS feed 中的最大项目数。
 
 ### sectionPagesMenu
 
-参阅["懒人 section 菜单"](/templates/menu-templates/#section-menu-for-lazy-bloggers)。
+参阅["懒人 section 菜单"]({{< relref "/templates/menu-templates#section-menu-for-lazy-bloggers" >}})。
 
 ### security
 
-参阅[安全策略](/about/security-model/#security-policy)。
+参阅[安全策略]({{< relref "/about/security-model#security-policy" >}})。
 
 ### sitemap
 
-默认[站点地图配置](/templates/sitemap-template/#configuration)。
+默认[站点地图配置]({{< relref "/templates/sitemap-template#configuration" >}})。
 
 ### summaryLength
 
 **默认值：** 70
 
-在 [.Summary](../../content-management/summaries/#hugo-defined-automatic-summary-splitting)（摘要）中显示的文本长度。
+在 [.Summary]({{< relref "/content-management/summaries#hugo-defined-automatic-summary-splitting" >}})（摘要）中显示的文本长度。
 
 ### taxonomies
 
-参阅[配置分类](/content-management/taxonomies#configure-taxonomies)。
+参阅[配置分类]({{< relref "/content-management/taxonomies#configure-taxonomies" >}})。
 
 ### theme
 
-关于如何引入一个主题参阅[模块配置][Module Config](/hugo-modules/configuration/#module-config-imports)。
+关于如何引入一个主题参阅[模块配置][Module Config]({{< relref "/hugo-modules/configuration#module-config-imports" >}})。
 
 ### themesDir
 
@@ -453,7 +453,7 @@ Hugo 从中读取主题的目录。
 
 {{< new-in "0.87.0" >}}
 
-时区（或位置），例如 `Europe/Oslo`，在解析前言设定中的日期时或者在[时间函数](/functions/time/)中，若没有提供时区信息，将以此作为默认值。有效值可能取决于操作系统，但应该会包括 `UTC`、`LOCAL` 以及 [IANA 时区数据库](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) 中的位置。
+时区（或位置），例如 `Europe/Oslo`，在解析前言设定中的日期时或者在[时间函数]({{< relref "/functions/time" >}})中，若没有提供时区信息，将以此作为默认值。有效值可能取决于操作系统，但应该会包括 `UTC`、`LOCAL` 以及 [IANA 时区数据库](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) 中的位置。
 
 ### title
 
@@ -508,12 +508,12 @@ useResourceCacheWhen
 : 设置什么时候将 `/resources/_gen` 中缓存的资源用于 PostCSS 和 ToCSS。有效值为 `never`、`always` 和 `fallback`。最后一个值表示如果 PostCSS/extended 版本不可用，将尝试缓存。
 
 writeStats {{< new-in "0.69.0" >}}
-: 启用后，将在项目根目录写入一个名为 `hugo_satas.json` 的文件，其中包含一些有关构建的聚合数据，例如已发布的用于进行 [CSS pruning](/hugo-pipes/postprocess/#css-purging-with-postcss) 的 HTML 实体列表。如果只想将其用于生产的构建，则应考虑将其放在 [config/production](/getting-started/configuration/#configuration-directory) 中。值得一提的是，由于部分服务器构建的性质，当在服务器运行时添加或修改 HTML 实体时，都将添加新的 HTML 实体而不会删除旧的值，直到重启服务器或者运行 `hugo` 构建。
+: 启用后，将在项目根目录写入一个名为 `hugo_satas.json` 的文件，其中包含一些有关构建的聚合数据，例如已发布的用于进行 [CSS pruning]({{< relref "/hugo-pipes/postprocess#css-purging-with-postcss" >}}) 的 HTML 实体列表。如果只想将其用于生产的构建，则应考虑将其放在 [config/production]({{< relref "/getting-started/configuration#configuration-directory" >}}) 中。值得一提的是，由于部分服务器构建的性质，当在服务器运行时添加或修改 HTML 实体时，都将添加新的 HTML 实体而不会删除旧的值，直到重启服务器或者运行 `hugo` 构建。
 
 注意：该选项主要用于清除未使用的 CSS，主要考虑构建速度，可能存在误报（例如元素不是真正的 HTML 元素）。
 
 noJSConfigInAssets {{< new-in "0.78.0" >}}
-: Hugo 构建时可以在 `/assets` 文件夹中写入一个 `jsconfig.json` 文件，其中包含通过运行 [js.Build](/hugo-pipes/js) 得到的导入映射。此文件旨在帮助在 [VS Code](https://code.visualstudio.com/) 等代码编辑器中进行智能提示。使用 `noJSConfigInAssets` 选项可以将该功能关闭。注意，如果您不使用 `js.Build`，则不会写入任何文件。
+: Hugo 构建时可以在 `/assets` 文件夹中写入一个 `jsconfig.json` 文件，其中包含通过运行 [js.Build]({{< relref "/hugo-pipes/js" >}}) 得到的导入映射。此文件旨在帮助在 [VS Code](https://code.visualstudio.com/) 等代码编辑器中进行智能提示。使用 `noJSConfigInAssets` 选项可以将该功能关闭。注意，如果您不使用 `js.Build`，则不会写入任何文件。
 
 
 ## 配置服务器 {id="configure-server"}
@@ -569,7 +569,7 @@ force = false
 
 ## 配置标题大小写样式 {id="configure-title-case"}
 
-设置 `titleCaseStyle` 选项以指定[标题](/functions/title/)模板功能和自动章节标题所使用的大小写样式。默认使用 [AP Stylebook](https://www.apstylebook.com/)（美联社风格），但你也可以将其设置为 `Chicago` 或者 `Go`（每个单词都以大写字母开头）。
+设置 `titleCaseStyle` 选项以指定[标题]({{< relref "/functions/title" >}})模板功能和自动章节标题所使用的大小写样式。默认使用 [AP Stylebook](https://www.apstylebook.com/)（美联社风格），但你也可以将其设置为 `Chicago` 或者 `Go`（每个单词都以大写字母开头）。
 
 # 配置环境变量 {id="configuration-environment-variables"}
 
@@ -767,12 +767,12 @@ dir
 * [YAML 规范][yaml]
 * [JSON 规范][json]
 
-[`.Site.Params`]: /variables/site/
-[directory structure]: /getting-started/directory-structure
+[`.Site.Params`]: {{< relref "/variables/site" >}}
+[directory structure]: {{< relref "/directory-structure" >}}
 [json]: https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf "Specification for JSON, JavaScript Object Notation"
-[lookup order]: /templates/lookup-order/
-[Output Formats]: /templates/output-formats/
-[templates]: /templates/
+[lookup order]: {{< relref "/templates/lookup-order" >}}
+[Output Formats]: {{< relref "/templates/output-formats" >}}
+[templates]: {{< relref "/templates" >}}
 [toml]: https://github.com/toml-lang/toml
 [yaml]: https://yaml.org/spec/
-[static-files]: /content-management/static-files/
+[static-files]: {{< relref "/content-management/static-files" >}}

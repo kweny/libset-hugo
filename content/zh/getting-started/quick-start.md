@@ -21,17 +21,17 @@ toc: true
 **原文：[Quick Start](https://gohugo.io/getting-started/quick-start/)**
 
 {{% note %}}
-本快速入门在示例中使用 macOS。有关如何在其它操作系统上安装 Hugo 的说明，请参阅[安装](/getting-started/installing)。
+本快速入门在示例中使用 macOS。有关如何在其它操作系统上安装 Hugo 的说明，请参阅[安装]({{< relref "/getting-started/installing" >}})。
 
 建议[安装 Git](https://git-scm.com/downloads) 来运行本教程。
 
-对于其它学习 Hugo 的方法，如书籍或视频教程，请参阅[外部学习资源](/getting-started/external-learning-resources/)页面。
+对于其它学习 Hugo 的方法，如书籍或视频教程，请参阅[外部学习资源]({{< relref "/getting-started/external-learning-resources" >}})页面。
 {{% /note %}}
 
 ## 第 1 步：安装 Hugo
 
 {{% note %}}
-Homebrew 和 MacPorts 是 macOS 的包管理器，可以分别从 [brew.sh](https://brew.sh/) 和 [macports.org](https://www.macports.org/) 安装。如果您使用的是 Windows 等其它操作系统，请参阅[安装](/getting-started/installing)。
+Homebrew 和 MacPorts 是 macOS 的包管理器，可以分别从 [brew.sh](https://brew.sh/) 和 [macports.org](https://www.macports.org/) 安装。如果您使用的是 Windows 等其它操作系统，请参阅[安装]({{< relref "/getting-started/installing" >}})。
 {{% /note %}}
 
 ```bash
@@ -96,16 +96,15 @@ title: "My First Post"
 date: 2019-03-26T08:47:11+01:00
 draft: true
 ---
-
 ```
 
 {{% note %}}
-其中 `draft: true` 表示该内容文件是草稿，草稿不会被部署。当内容编写完成后，可以将其改为 `draft: false` 以使其可以正式发布。更多信息参阅[这里](/getting-started/usage/#draft-future-and-expired-content)。
+其中 `draft: true` 表示该内容文件是草稿，草稿不会被部署。当内容编写完成后，可以将其改为 `draft: false` 以使其可以正式发布。更多信息参阅[这里]({{< relref "/getting-started/usage#draft-future-and-expired-content" >}})。
 {{% /note %}}
 
 ## 第 5 步：启动 Hugo 服务器
 
-现在，在启用[草稿](/getting-started/usage/#draft-future-and-expired-content)的情况下启动 Hugo 服务器：
+现在，在启用[草稿]({{< relref "/getting-started/usage#draft-future-and-expired-content" >}})的情况下启动 Hugo 服务器：
 
 {{< asciicast BvJBsF6egk9c163bMsObhuNXj >}}
 
@@ -160,7 +159,7 @@ theme = "ananke"
 
 有关特定于主题的配置选项，请参阅[主题站点](https://github.com/theNewDynamic/gohugo-theme-ananke)。
 
-**如果需要进一步的主题定制，请参阅[定制主题](/themes/customizing/)。**
+**如果需要进一步的主题定制，请参阅[定制主题]({{< relref "/hugo-modules/theme-components" >}})。**
 
 ## 第 7 步：构建静态页面
 

@@ -127,8 +127,6 @@ Hugo 允许您在内容的 [front matter][]（前言设定，也叫文档头，�
 2. `draft: true` 表示草稿内容。
 3. `expirydate` 表示该内容过了指定日期后不会再发布。
 
-All three of these can be overridden during both local development *and* deployment by adding the following flags to `hugo` and `hugo server`, respectively, or by changing the boolean values assigned to the fields of the same name (without `--`) in your [configuration][config]:
-
 在本地开发和部署期间，可以通过在命令 `hugo` 和 `hugo server` 上添加以下标志来开启上述三种内容的发布。也可以在[站点配置][config]中使用同名选项（不带 `--`）设置布尔值来开启这些内容的发布。
 
 1. `--buildFuture`
@@ -209,9 +207,9 @@ disableLiveReload = true
 {{% /warning %}}
 
 
-[commands]: /commands/
-[config]: /getting-started/configuration/
-[dirs]: /getting-started/directory-structure/
-[front matter]: /content-management/front-matter/
-[hosting]: /hosting-and-deployment/
-[install]: /getting-started/installing/
+[commands]: {{< relref "/commands" >}}
+[config]: {{< relref "/getting-started/configuration" >}}
+[dirs]: {{< relref "/getting-started/directory-structure" >}}
+[front matter]: {{< relref "/content-management/front-matter" >}}
+[hosting]: {{< relref "/hosting-and-deployment" >}}
+[install]: {{< relref "/getting-started/installing" >}}
