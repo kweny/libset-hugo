@@ -1,51 +1,58 @@
 ---
-title: Configure Markup
-description: How to handle Markdown and other markup related configuration.
+title: 配置标记
+linktitle: 配置标记
+description: 如何处理 Markdown 和其他标记相关的配置。
 date: 2019-11-15
 categories: [getting started,fundamentals]
 keywords: [configuration,highlighting]
+menu:
+  docs:
+    parent: "getting-started"
+    weight: 65
 weight: 65
 sections_weight: 65
 slug: configuration-markup
 toc: true
 ---
 
-## Configure Markup
+**原文：[Configure Markup](https://gohugo.io/getting-started/configuration-markup/)**
+
+## 配置标记（Markup）
 
 {{< new-in "0.60.0" >}}
 
-See [Goldmark](#goldmark) for settings related to the default Markdown handler in Hugo.
+关于 Hugo 中与默认 Markdown 处理程序相关的设置，请参阅 [Goldmark](#goldmark)。
 
-Below are all markup related configuration in Hugo with their default settings:
+以下是 Hugo 中所有与标记相关的的配置及其默认设置：
 
 {{< code-toggle config="markup" />}}
 
-**See each section below for details.**
+**详细信息参阅下面的各部分。**
 
 ### Goldmark
 
-[Goldmark](https://github.com/yuin/goldmark/) is from Hugo 0.60 the default library used for Markdown. It's fast, it's [CommonMark](https://spec.commonmark.org/0.29/) compliant and it's very flexible. Note that the feature set of Goldmark vs Blackfriday isn't the same; you gain a lot but also lose some, but we will work to bridge any gap in the upcoming Hugo versions.
+[Goldmark](https://github.com/yuin/goldmark/) 从 Hugo 0.60 开始引入，作为 Markdown 的默认解析器。它速度快，符合 [CommonMark](https://spec.commonmark.org/0.29/) 标准，且非常灵活。请注意，Goldmark 与 Blackfriday 的功能集并不相同，相比 Blackfriday 它提供了很多新的功能同时也缺失一些功能，但我们会努力在后续版本中弥补这些差距。
 
-This is the default configuration:
+下面是默认配置：
 
 {{< code-toggle config="markup.goldmark" />}}
 
-For details on the extensions, refer to [this section](https://github.com/yuin/goldmark/#built-in-extensions) of the Goldmark documentation
+关于上述配置中 extensions 部分的详细信息，请参阅[Goldmark 文档的这一部分](https://github.com/yuin/goldmark/#built-in-extensions)。
 
-Some settings explained:
+部分设置的解释：
 
 unsafe
-: By default, Goldmark does not render raw HTMLs and potentially dangerous links. If you have lots of inline HTML and/or JavaScript, you may need to turn this on.
+: 默认情况下，Goldmark 不会渲染原始 HTML 和潜在危险的链接。如果您有很多内联 HTML 和/或 JavaScript，可能需要开启 `unsafe` 设置。
 
 typographer
-: This extension substitutes punctuations with typographic entities like [smartypants](https://daringfireball.net/projects/smartypants/).
+: 这个扩展使用像 [smartypants](https://daringfireball.net/projects/smartypants/) 这样的排版实体来代替标点符号。
 
 attribute
-: Enable custom attribute support for titles and blocks by adding attribute lists inside single curly brackets (`{.myclass class="class1 class2" }`) and placing it _after the Markdown element it decorates_, on the same line for titles and on a new line directly below for blocks.
+: 通过在一对大括号中添加属性列表（`{.myclass class="class1 class2" }`）并将其放在它所修饰的 Markdown 元素之后，来为标题和块启用自定义属性支持。修饰标题时应与标题同一行，修饰块时应在块的下方起新行。
 
-{{< new-in "0.81.0" >}} In Hugo 0.81.0 we added support for adding attributes (e.g. CSS classes) to Markdown blocks, e.g. tables, lists, paragraphs etc.
+{{< new-in "0.81.0" >}} 在 Hugo 0.81.0 中，支持为表格、列表、段落等 Markdown 块添加属性（如 CSS class）。
 
-A blockquote with a CSS class:
+一个带有 CSS class 的块引用：
 
 ```md
 > foo
@@ -53,7 +60,7 @@ A blockquote with a CSS class:
 {.myclass}
 ```
 
-There are some current limitations: For tables you can currently only apply it to the full table, and for lists the `ul`/`ol`-nodes only, e.g.:
+目前还存在一些限制：对于表格，目前只能将其应用于整个表格（不能单独对某行或某单元格使用）；对于列表，仅适用于 `ul`/`ol` 节点，例如——
 
 ```md
 * Fruit
@@ -67,8 +74,7 @@ There are some current limitations: For tables you can currently only apply it t
   {.dairies}
 {.list}
 ```
-
-Note that attributes in [code fences](/content-management/syntax-highlighting/#highlighting-in-code-fences) must come after the opening tag, with any other highlighting processing instruction, e.g.:
+请注意，对 [code fences]({{< relref "/content-management/syntax-highlighting#highlighting-in-code-fences" >}}) （代码块）使用时，属性必须在开始标记之后，和其它高亮处理指令放在一起，例如——
 
 ````
 ```go {.myclass linenos=table,hl_lines=[8,"15-17"],linenostart=199}
@@ -77,47 +83,46 @@ Note that attributes in [code fences](/content-management/syntax-highlighting/#h
 ````
 
 autoHeadingIDType ("github") {{< new-in "0.62.2" >}}
-: The strategy used for creating auto IDs (anchor names). Available types are `github`, `github-ascii` and `blackfriday`. `github` produces GitHub-compatible IDs, `github-ascii` will drop any non-Ascii characters after accent normalization, and `blackfriday` will make the IDs work as with [Blackfriday](#blackfriday), the default Markdown engine before Hugo 0.60. Note that if Goldmark is your default Markdown engine, this is also the strategy used in the [anchorize](/functions/anchorize/) template func.
+: 用于创建自动 ID（锚点名称）的策略。可用的类型有 `github`、`github-ascii` 和 `blackfriday`。`github` 生成与 Github 兼容的 ID；`github-ascii` 在重音规范化后删除非 ASCII 字符；`blackfriday` 使用像 [Blackfriday](#blackfriday) 一样的 ID 策略，Blackfriday 是 Hugo 0.60 之前的默认 Markdown 引擎。请注意，如果使用 Goldmark 作为默认 Markdown 引擎，该选项的配置也将作为[锚定]({{< relref "/functions/anchorize" >}})模板函数中使用的策略。
 
 ### Blackfriday
 
+[Blackfriday](https://github.com/russross/blackfriday) 是 Hugo 的默认 Markdown 渲染引擎，现在被 Goldmark 取代。但您仍然可以使用它：只需在顶级 `markup` 配置中将 `defaultMarkdownHandler` 设置为 `blackfriday`。
 
-[Blackfriday](https://github.com/russross/blackfriday) was Hugo's default Markdown rendering engine, now replaced with Goldmark. But you can still use it: Just set `defaultMarkdownHandler` to `blackfriday` in your top level `markup` config.
-
-This is the default config:
+下面是默认配置：
 
 {{< code-toggle config="markup.blackFriday" />}}
 
-### Highlight
+### Highlight（高亮）
 
-This is the default `highlight` configuration. Note that some of these settings can be set per code block, see [Syntax Highlighting](/content-management/syntax-highlighting/).
+下面是默认的 `highlight` 配置。请注意，其中一些设置可以针对每个代码块进行设置，请参阅[语法高亮]({{< relref "/content-management/syntax-highlighting" >}})。
 
 {{< code-toggle config="markup.highlight" />}}
 
-For `style`, see these galleries:
+关于 `style` 配置项，可以参阅这些样式库演示：
 
 * [Short snippets](https://xyproto.github.io/splash/docs/all.html)
 * [Long snippets](https://xyproto.github.io/splash/docs/longer/all.html)
 
-For CSS, see [Generate Syntax Highlighter CSS](/content-management/syntax-highlighting/#generate-syntax-highlighter-css).
+对于 CSS，请参阅[生成语法高亮 CSS]({{< relref "/content-management/syntax-highlighting#generate-syntax-highlighter-css" >}})。
 
-### Table Of Contents
+
+### 目录 {id="table-of-contents"}
 
 {{< code-toggle config="markup.tableOfContents" />}}
 
-These settings only works for the Goldmark renderer:
+这些设置仅适用于 Goldmark 渲染器：
 
 startLevel
-: The heading level, values starting at 1 (`h1`), to start render the table of contents.
+: 标题级别，取值从 1（`h1`）开始，设置从哪个级别开始渲染目录。
 
 endLevel
-: The heading level, inclusive, to stop render the table of contents.
+: 停止目录渲染的标题级别（包含）。
 
 ordered
-: Whether or not to generate an ordered list instead of an unordered list.
+: 是否生成有序列表而不是无序列表。
 
+## Markdown 渲染钩子 {id="markdown-render-hooks"}
 
-## Markdown Render Hooks
-
-See [Markdown Render Hooks](/templates/render-hooks/).
+参阅 [Markdown 渲染钩子]({{< relref "/templates/render-hooks" >}})。
 
