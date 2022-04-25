@@ -37,7 +37,7 @@ toc: true
 
 {{< code-toggle config="markup.goldmark" />}}
 
-关于上述配置中 extensions 部分的详细信息，请参阅[Goldmark 文档的这一部分](https://github.com/yuin/goldmark/#built-in-extensions)。
+关于上述配置中 extensions 部分的详细信息，请参阅 [Goldmark 文档的这一部分](https://github.com/yuin/goldmark/#built-in-extensions)。
 
 部分设置的解释：
 
@@ -52,7 +52,7 @@ attribute
 
 {{< new-in "0.81.0" >}} 在 Hugo 0.81.0 中，支持为表格、列表、段落等 Markdown 块添加属性（如 CSS class）。
 
-一个带有 CSS class 的块引用：
+如一个带有 CSS class 的引用块：
 
 ```md
 > foo
@@ -83,7 +83,7 @@ attribute
 ````
 
 autoHeadingIDType ("github") {{< new-in "0.62.2" >}}
-: 用于创建自动 ID（锚点名称）的策略。可用的类型有 `github`、`github-ascii` 和 `blackfriday`。`github` 生成与 Github 兼容的 ID；`github-ascii` 在重音规范化后删除非 ASCII 字符；`blackfriday` 使用像 [Blackfriday](#blackfriday) 一样的 ID 策略，Blackfriday 是 Hugo 0.60 之前的默认 Markdown 引擎。请注意，如果使用 Goldmark 作为默认 Markdown 引擎，该选项的配置也将作为[锚定]({{< relref "/functions/anchorize" >}})模板函数中使用的策略。
+: 用于创建自动 ID（锚点名称）的策略。可用的类型有 `github`、`github-ascii` 和 `blackfriday`。`github` 生成与 GitHub 兼容的 ID；`github-ascii` 在重音规范化后删除非 ASCII 字符；`blackfriday` 使用像 [Blackfriday](#blackfriday) 一样的 ID 策略，Blackfriday 是 Hugo 0.60 之前的默认 Markdown 引擎。请注意，如果使用 Goldmark 作为默认 Markdown 引擎，该选项的配置也将作为[锚定]({{< relref "/functions/anchorize" >}})模板函数中使用的策略。
 
 ### Blackfriday
 
@@ -95,7 +95,7 @@ autoHeadingIDType ("github") {{< new-in "0.62.2" >}}
 
 ### Highlight（高亮）
 
-下面是默认的 `highlight` 配置。请注意，其中一些设置可以针对每个代码块进行设置，请参阅[语法高亮]({{< relref "/content-management/syntax-highlighting" >}})。
+下面是默认的 `highlight` 配置。其中一些选项可以在具体的代码块中单独设置，请参阅[语法高亮]({{< relref "/content-management/syntax-highlighting" >}})。
 
 {{< code-toggle config="markup.highlight" />}}
 
@@ -105,7 +105,6 @@ autoHeadingIDType ("github") {{< new-in "0.62.2" >}}
 * [Long snippets](https://xyproto.github.io/splash/docs/longer/all.html)
 
 对于 CSS，请参阅[生成语法高亮 CSS]({{< relref "/content-management/syntax-highlighting#generate-syntax-highlighter-css" >}})。
-
 
 ### 目录 {id="table-of-contents"}
 
