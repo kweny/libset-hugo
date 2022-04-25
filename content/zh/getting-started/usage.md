@@ -22,15 +22,16 @@ toc: true
 
 本文描述的是在开发 Hugo 项目时将会使用的最常用的命令。想要全面了解 Hugo 的 CLI（Command Line Interface，命令行界面）请参阅[命令行参考][commands]。
 
-## Test Installation
+## 测试安装
 
-Once you have [installed Hugo][install], make sure it is in your `PATH`. You can test that Hugo has been installed correctly via the `help` command:
+当您已经[安装了 Hugo][install]，确保它在您的 `PATH` 中，就可以通过以下 `help` 命令测试 Hugo 是否已正确安装。
+
 
 ```
 hugo help
 ```
 
-The output you see in your console should be similar to the following:
+在控制台中看到的输出应类似于以下内容：
 
 ```
 hugo is the main command, used to build your Hugo site.
@@ -99,13 +100,13 @@ Flags:
 Use "hugo [command] --help" for more information about a command.
 ```
 
-## The `hugo` Command
+## `hugo` 命令
 
-The most common usage is probably to run `hugo` with your current directory being the input directory.
+最常见的用法可能是直接在当前目录执行 `hugo` 命令，它会将当前目录作为输入来构建网站内容。
 
-This generates your website to the `public/` directory by default, although you can customize the output directory in your [site configuration][config] by changing the `publishDir` field.
+默认情况下会将网站内容生成到 `public/` 目录中，也可以通过自定义[站点配置][config]中的 `publishDir` 选项来更改输出目录。
 
-The command `hugo` renders your site into `public/` dir and is ready to be deployed to your web server:
+`hugo` 命令将网站渲染到 `public/` 目录，并做好部署到 Web 服务器的准备：
 
 ```
 hugo
@@ -120,21 +121,23 @@ in 90 ms
 
 ## 草稿、未来和过期内容 {#draft-future-and-expired-content}
 
-Hugo allows you to set `draft`, `publishdate`, and even `expirydate` in your content's [front matter][]. By default, Hugo will not publish:
+Hugo 允许您在内容的 [front matter][]（前言设定，也叫文档头，即 Markdown 文档中最上方定义的内容） 中设置 `draft`、`publishdate`、`expirydate` 选项，默认情况下，带有这些选项的内容不会被发布：
 
-1. Content with a future `publishdate` value
-2. Content with `draft: true` status
-3. Content with a past `expirydate` value
+1. `publishdate` 表示该内容在未来的指定日期发布。
+2. `draft: true` 表示草稿内容。
+3. `expirydate` 表示该内容过了指定日期后不会再发布。
 
 All three of these can be overridden during both local development *and* deployment by adding the following flags to `hugo` and `hugo server`, respectively, or by changing the boolean values assigned to the fields of the same name (without `--`) in your [configuration][config]:
+
+在本地开发和部署期间，可以通过在命令 `hugo` 和 `hugo server` 上添加以下标志来开启上述三种内容的发布。也可以在[站点配置][config]中使用同名选项（不带 `--`）设置布尔值来开启这些内容的发布。
 
 1. `--buildFuture`
 2. `--buildDrafts`
 3. `--buildExpired`
 
-## LiveReload
+## LiveReload（实时重载）
 
-Hugo comes with [LiveReload](https://github.com/livereload/livereload-js) built in. There are no additional packages to install. A common way to use Hugo while developing a site is to have Hugo run a server with the `hugo server` command and watch for changes:
+Hugo 内置了 [LiveReload](https://github.com/livereload/livereload-js)，无需安装额外的软件包。在开发站点时，可以使用 `hugo server` 命令运行服务器并实时查看更改：
 
 ```
 hugo server
@@ -151,7 +154,7 @@ Web Server is available at http://localhost:1313/
 Press Ctrl+C to stop
 ```
 
-This will run a fully functioning web server while simultaneously watching your file system for additions, deletions, or changes within the following areas of your [project organization][dirs]:
+它会运行一个功能齐全的 Web 服务器，同时监视[项目组织结构][dirs]中以下目录文件的添加、删除或更改操作：
 
 * `/static/*`
 * `/content/*`
@@ -161,49 +164,48 @@ This will run a fully functioning web server while simultaneously watching your 
 * `/themes/<CURRENT-THEME>/*`
 * `config`
 
-Whenever you make changes, Hugo will simultaneously rebuild the site and continue to serve content. As soon as the build is finished, LiveReload tells the browser to silently reload the page.
+当进行更改时，Hugo 将自动重建站点，重建完成后，LiveReload 会通知浏览器以静默方式刷新页面。
 
-Most Hugo builds are so fast that you may not notice the change unless looking directly at the site in your browser. This means that keeping the site open on a second monitor (or another half of your current monitor) allows you to see the most up-to-date version of your website without the need to leave your text editor.
+多数时候 Hugo 的构建都非常快，除非一直盯着浏览器，否则您可能不会注意到更改。这意味着可以在第二台显示器（或当前显示器的另一半）上保持浏览器打开状态来查看页面变更，而无需离开编辑器。
 
 {{% note "Closing `</body>` Tag"%}}
-Hugo injects the LiveReload `<script>` before the closing `</body>` in your templates and will therefore not work if this tag is not present..
+Hugo 是在您的模板 `</body>` 关闭标签之前注入的 LiveReload `<script>`，因此如果此标签不存在，它将无法工作。
 {{% /note %}}
 
-### Redirect automatically to the page you just saved
+## 自动重定向到您刚保存的页面
 
-When you are working with more than one document and want to see the markup as real-time as possible it's not ideal to keep jumping between them. 
-Fortunately Hugo has an easy, embedded and simple solution for this. It's the flag `--navigateToChanged`.
+当您同时编辑多个文档并希望尽可能地实时预览变更时，如果手动切换浏览器标签显然是很麻烦的。幸运的是 Hugo 提供了一个简单的嵌入式的解决方案，即命令行标志 `--navigateToChanged`。
 
-### Disable LiveReload
+## 禁用 LiveReload
 
-LiveReload works by injecting JavaScript into the pages Hugo generates. The script creates a connection from the browser's web socket client to the Hugo web socket server.
+LiveReload 通过将 JavaScript 脚本注入到 Hugo 生成的页面来工作。这个脚本会创建一个从浏览器到 Hugo 服务端的 web socket 连接。
 
-The following methods make it easy to disable LiveReload:
+以下方法可以禁用 LiveReload：
 
 ```
 hugo server --watch=false
 ```
 
-Or...
+或者
 
 ```
 hugo server --disableLiveReload
 ```
 
-The latter flag can be omitted by adding the following:
+也可以在站点配置中添加以下选项来禁用：
 
 {{< code-toggle file="config" >}}
 disableLiveReload = true
 {{< /code-toggle >}}
 
-## Deploy Your Website
+## 部署您的网站
 
-After running `hugo server` for local web development, you need to do a final `hugo` run *without the `server` part of the command* to rebuild your site. You may then deploy your site by copying the `public/` directory to your production web server.
+使用 `hugo server` 命令进行本地开发调试，之后，您需要使用 `hugo` 命令（没有后面的 `server`部分）来重建站点。然后可以将生成的 `public/` 目录复制到您的生产 Web 服务器上，以此来部署您的站点。
 
-Since Hugo generates a static website, your site can be hosted *anywhere* using any web server. See [Hosting and Deployment][hosting] for methods for hosting and automating deployments contributed by the Hugo community.
+由于 Hugo 生成的是静态网站，因此您可以使用任何 Web 服务器托管在任何地方。有关 Hugo 社区贡献的托管和自动化部署的方法，请参阅[托管和部署][hosting]。
 
 {{% warning "Generated Files are **NOT** Removed on Site Build" %}}
-Running `hugo` *does not* remove generated files before building. This means that you should delete your `public/` directory (or the publish directory you specified via flag or configuration file) before running the `hugo` command. If you do not remove these files, you run the risk of the wrong files (e.g., drafts or future posts) being left in the generated site.
+`hugo` 命令不会删除已经生成的文件。这意味着您应该在运行 `hugo` 命令之前手动删除 `public/` 目录（或者通过命令行标志或配置文件来指定发布目录）。如果您不删除的话，可能会有在生成的站点中留下错误文件（例如草稿或未来内容）的风险。
 {{% /warning %}}
 
 
