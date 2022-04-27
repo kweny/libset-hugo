@@ -1,7 +1,7 @@
 ---
-title: Hugo Modules
-linktitle: Hugo Modules Overview
-description: How to use Hugo Modules.
+title: Hugo 模块
+linktitle: Hugo 模块概览
+description: 如何使用 Hugo 模块。
 date: 2017-02-01
 publishdate: 2017-02-01
 menu:
@@ -17,16 +17,18 @@ aliases: [/themes/overview/,/themes/]
 toc: true
 ---
 
-**Hugo Modules** are the core building blocks in Hugo. A _module_ can be your main project or a smaller module providing one or more of the 7 component types defined in Hugo: **static**, **content**, **layouts**, **data**, **assets**, **i18n**, and **archetypes**.
+**原文：[Hugo Modules](https://gohugo.io/hugo-modules/)**
 
-You can combine modules in any combination you like, and even mount directories from non-Hugo projects, forming a big, virtual union file system.
+Hugo 模块（**Hugo Modules**）是 Hugo 的核心构建块。一个*模块*可以是你的主项目，也可以是一个提供了 **static**、**content**、**layouts**、**data**、**assets**、**i18n**、**archtypes**（Hugo 的 7 种组件类型）中一种或多种类型组件的较小的模块。
 
-Hugo Modules are powered by Go Modules. For more information about Go Modules, see:
+你可以任意组合模块，甚至挂载非 Hugo 项目的目录，形成一个大的、虚拟的联合文件系统。
+
+Hugo 模块由 Go Modules 提供支持，有关 Go 模块的更多信息请参阅：
 
 - [https://github.com/golang/go/wiki/Modules](https://github.com/golang/go/wiki/Modules)
 - [https://blog.golang.org/using-go-modules](https://blog.golang.org/using-go-modules)
 
-This is all very much brand new and there are only a few example projects around:
+这是一个全新的功能，目前只有几个示例项目：
 
-- [https://github.com/bep/docuapi](https://github.com/bep/docuapi) is a theme that has been ported to Hugo Modules while testing this feature. It is a good example of a non-Hugo-project mounted into Hugo’s folder structure. It even shows a JS Bundler implementation in regular Go templates.
-- [https://github.com/bep/my-modular-site](https://github.com/bep/my-modular-site) is a very simple site used for testing.
+- [https://github.com/bep/docuapi](https://github.com/bep/docuapi) 是一个在测试此功能时移植到 Hugo Modules 的主题。这时一个很好的将非 Hugo 项目挂载到 Hugo 文件夹结构的示例。它甚至演示了在常规 Go 模板中的 JS Bundler 实现。
+- [https://github.com/bep/my-modular-site](https://github.com/bep/my-modular-site) 是一个非常简单的用于测试的站点。

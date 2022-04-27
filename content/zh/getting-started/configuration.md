@@ -99,25 +99,27 @@ shallow
 deep
 : 深度合并，使用新添加的键值，并且合并已有的键值。
 
+{{% translator-note %}}
 举例来说，假设你使用的主题中有一个配置：
 
-{{< code-toggle file="config">}}
+```toml
 [params]
 [params.colours]
 blue = "#337DFF"
 green = "#68FF33"
 red = "#FF3358"
-{{< /code-toggle >}}
+```
 
-在之前版本的 Hugo，要调整其中一个配置，如 `red` 的颜色，则需要复制整个 `[params.colours]` 配置，然后把 `red` 修改为你想要的值。
+在之前版本的 Hugo，要调整其中一个配置，如 `red` 的颜色，则需要复制整个 `[params.colours]` 下的配置，然后把 `red` 修改为你想要的值。
 
 现在当开启 `deep` 的情况下，只需要设置想变更的选项，其它的选项会沿用主题中的值：
 
-{{< code-toggle file="config">}}
+```toml
 [params]
 [params.colours]
 red = "#fc0f03"
-{{< /code-toggle >}}
+```
+{{% /translator-note %}}
 
 以下是当前默认的合并策略（在您的站点中不需要进行如下冗长的配置，只需要配置您需要修改的选项即可，未配置的将使用默认值）：
 
