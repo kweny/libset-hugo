@@ -1,7 +1,7 @@
 ---
-title: Use Hugo Modules
-linktitle: Use Hugo Modules
-description: How to use Hugo Modules to build and manage your site.
+title: 使用 Hugo 模块
+linktitle: 使用 Hugo 模块
+description: 如何使用 Hugo 模块来构建和管理您的站点。
 date: 2019-07-24
 categories: [hugo modules]
 keywords: [install, themes, source, organization, directories,usage,modules]
@@ -16,27 +16,30 @@ aliases: [/themes/usage/,/themes/installing/,/installing-and-using-themes/]
 toc: true
 ---
 
-## Prerequisite
+**原文：[Use Hugo Modules](https://gohugo.io/hugo-modules/use-modules/)**
+
+## 先决条件
 
 {{< gomodules-info >}}
 
 
+## 初始化新模块 {id=initialize-a-new-module}
 
-## Initialize a New Module
-
-Use `hugo mod init` to initialize a new Hugo Module. If it fails to guess the module path, you must provide it as an argument, e.g.:
+使用 `hugo mod init` 命令初始化一个新的模块。如果模块路径无法被猜测出来，则必须将其作为参数提供，例如：
 
 ```bash
 hugo mod init github.com/gohugoio/myShortcodes
 ```
 
-Also see the [CLI Doc](/commands/hugo_mod_init/).
+另请参阅 [CLI 文档]({{< relref "/commands/hugo_mod_init" >}})。
 
-## Use a Module for a Theme
-The easiest way to use a Module for a theme is to import it in the config.
 
-1. Initialize the hugo module system: `hugo mod init github.com/<your_user>/<your_project>`
-2. Import the theme:
+## 为主题（theme）使用模块 {id=use-a-module-for-a-theme}
+
+将模块应用于主题的最简单方法是在配置中将其导入。
+
+1. 初始化 Hugo 模块系统：`hugo mod init github.com/<your_user>/<your_project>`
+2. 导入主题：
 
 {{< code-toggle file="config" >}}
 [module]
@@ -44,21 +47,22 @@ The easiest way to use a Module for a theme is to import it in the config.
     path = "github.com/spf13/hyde"
 {{< /code-toggle >}}
 
-## Update Modules
 
-Modules will be downloaded and added when you add them as imports to your configuration, see [Module Imports](/hugo-modules/configuration/#module-config-imports).
+## 更新模块 {id=update-modules}
 
-To update or manage versions, you can use `hugo mod get`.
+当您将模块作为导入添加到配置中时，将会下载并添加该模块，参阅[模块导入]({{< relref "/hugo-modules/configuration#module-config-imports" >}})。
 
-Some examples:
+要更新或管理版本，可以使用 `hugo mod get` 命令。
 
-### Update All Modules
+一些梨子:
+
+### 更新所有模块
 
 ```bash
 hugo mod get -u
 ```
 
-### Update All Modules Recursively
+### 递归更新所有模块
 
 {{< new-in "0.65.0" >}}
 
@@ -66,37 +70,36 @@ hugo mod get -u
 hugo mod get -u ./...
 ```
 
-### Update One Module
+### 更新一个模块
 
 ```bash
 hugo mod get -u github.com/gohugoio/myShortcodes
 ```
-### Get a Specific Version
+### 获取特定版本
 
 ```bash
 hugo mod get github.com/gohugoio/myShortcodes@v1.0.7
 ```
 
-Also see the [CLI Doc](/commands/hugo_mod_get/).
+另请参阅 [CLI 文档]({{< relref "/commands/hugo_mod_init" >}})。
 
-## Make and test changes in a module
 
-One way to do local development of a module imported in a project is to add a replace directive to a local directory with the source in `go.mod`:
+## 在模块中进行和测试更改 {id=make-and-test-changes-in-a-module}
+
+对项目中导入的模块进行本地开发的一种方法是在 `go.md` 中添加一个指向到一个本地目录的 `replace` 指令：
 
 ```bash
 replace github.com/bep/hugotestmods/mypartials => /Users/bep/hugotestmods/mypartials
 ```
 
-If you have the `hugo server` running, the configuration will be reloaded and `/Users/bep/hugotestmods/mypartials` put on the watch list.
+如果你使用 `hugo server` 运行，将会重新加载配置，并将 `/Users/bep/hugotestmods/mypartials` 放入监视列表。
 
-Note that since v.0.77.0 you can use modules config [`replacements`](https://gohugo.io/hugo-modules/configuration/#module-config-top-level) option. {{< new-in "0.77.0" >}}
-
-## Print Dependency Graph
+注意，从 v0.77.0 开始，您可以使用模块配置的 [`replacements`]({{< relref "/hugo-modules/configuration#module-config-top-level" >}}) 选项。{{< new-in "0.77.0" >}}
 
 
-Use `hugo mod graph` from the relevant module directory and it will print the dependency graph, including vendoring, module replacement or disabled status.
+## 打印依赖图谱 {id=print-dependency-graph}
 
-E.g.:
+在相应的模块目录中执行 `hugo mod graph` 命令，将会打印依赖关系图，包括 vendoring、模块 replacement 或者禁用状态，例如：
 
 ```
 hugo mod graph
@@ -111,33 +114,33 @@ github.com/bep/my-modular-site in-themesdir
 
 ```
 
-Also see the [CLI Doc](/commands/hugo_mod_graph/).
-
-## Vendor Your Modules
-
-`hugo mod vendor` will write all the module dependencies to a `_vendor` folder, which will then be used for all subsequent builds.
-
-Note that:
-
-* You can run `hugo mod vendor` on any level in the module tree.
-* Vendoring will not store modules stored in your `themes` folder.
-* Most commands accept a `--ignoreVendorPaths` flag, which will then not use the vendored modules in `_vendor` for the module paths matching the [Glob](https://github.com/gobwas/glob) pattern given. Note that before Hugo 0.75 this flag was named `--ignoreVendor` and was a "all or nothing". {{< new-in "0.75.0" >}}
-
-Also see the [CLI Doc](/commands/hugo_mod_vendor/).
+另请参阅 [CLI 文档]({{< relref "/commands/hugo_mod_init" >}})。
 
 
-## Tidy go.mod, go.sum
+## Vendor 你的模块 {id=vendor-your-modules}
 
-Run `hugo mod tidy` to remove unused entries in `go.mod` and `go.sum`.
+`hugo mod vendor` 会将所有模块依赖项写入一个 `_vendor` 文件夹，并将其用于所有后续构建。
 
-Also see the [CLI Doc](/commands/hugo_mod_clean/).
+注意：
 
-## Clean Module Cache
+* 你可以在模块树中的任何层级运行 `hugo mod vendor`。
+* Vendoring 不会储存 `themes` 文件夹中存储的模块。
+* 大多数命令都接受一个 `--ignoreVendorPaths` 标志，使用 Glob 路径模式来匹配，意思是不要将 `_vendor` 中的模块用于匹配到的模块。注意，在 Hugo 0.75 之前，此标志名为 `--ignoreVendor` 意思是“全忽略或全不忽略”。{{< new-in "0.75.0" >}}
 
-Run `hugo mod clean` to delete the entire modules cache.
-
-Note that you can also configure the `modules` cache with a `maxAge`, see [File Caches](/getting-started/configuration/#configure-file-caches).
+另请参阅 [CLI 文档]({{< relref "/commands/hugo_mod_init" >}})。
 
 
+## 整理 go.mod， go.sum {id=tidy-gomod-gosum}
 
-Also see the [CLI Doc](/commands/hugo_mod_clean/).
+运行 `hugo mod tidy` 以删除 `go.mod` 和 `go.sum` 中未使用的条目。
+
+另请参阅 [CLI 文档]({{< relref "/commands/hugo_mod_init" >}})。
+
+
+## 清理模块缓存 {id=clean-module-cache}
+
+运行 `hugo mod clean` 以删除整个模块的缓存。
+
+注意，您还可以配置使用 `maxAge` 配置 `modules` 缓存，参阅[文件缓存]({{< relref "/getting-started/configuration#configure-file-caches" >}})。
+
+另请参阅 [CLI 文档]({{< relref "/commands/hugo_mod_init" >}})。

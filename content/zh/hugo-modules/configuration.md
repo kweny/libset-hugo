@@ -80,7 +80,7 @@ env HUGO_MODULE_PROXY=https://proxy.example.org hugo
 
 {{< gomodules-info >}}
 
-## 模块配置: hugoVersion
+## 模块配置: hugoVersion {id=module-config-hugoversion}
 
 如果您的模块需要特定版本的 Hugo 才能工作，可以在该 `module` 部分中指定，当用户使用太旧/太新的版本时将会收到警告。
 
@@ -103,7 +103,7 @@ max
 extended
 : 是否需要扩展版（extended）的 Hugo。
 
-## 模块配置: imports
+## 模块配置: imports {id=module-config-imports}
 
 {{< code-toggle file="config">}}
 [module]
@@ -147,7 +147,7 @@ noVendor
 {{< gomodules-info >}}
 
 
-## 模块配置: mounts
+## 模块配置: mounts {id=module-config-mounts}
 
 {{% note %}}
 在 Hugo 0.56.0 引入 `mounts` 配置时，我们谨慎的保留了原有的 `contentDir`、`staticDir` 之类的配置，以确保旧版本站点都能继续工作。但是您不应该同时配置这两者：如果您添加了一个 `mounts` 部分，应该删除旧的 `contentDir`、`staticDir` 等设置。
