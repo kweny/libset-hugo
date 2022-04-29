@@ -1,6 +1,6 @@
 ---
-title: Content Organization
-linktitle: Organization
+title: 内容组织
+linktitle: 组织
 description: Hugo assumes that the same structure that works to organize your source content is used to organize the rendered site.
 date: 2017-02-01
 publishdate: 2017-02-01
@@ -17,9 +17,11 @@ aliases: [/content/sections/]
 toc: true
 ---
 
+**原文：[Content Organization](https://gohugo.io/content-management/organization/)**
+
 ## Page Bundles
 
-Hugo `0.32` announced page-relative images and other resources packaged into `Page Bundles`.
+Hugo 0.32 将跟页面相关的图像及其它资源打包到 `Page Bundles` 中。
 
 These terms are connected, and you also need to read about [Page Resources]({{< relref "/content-management/page-resources" >}}) and [Image Processing]({{< relref "/content-management/image-processing" >}}) to get the full picture.
 
